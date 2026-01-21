@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanobanana Style Chart Tool - Download</title>
+    <style>
+        :root {
+            --primary: #FDFD96; /* Pop Yellow */
+            --accent: #F57F17; /* Darker Yellow */
+            --dark: #121212;
+            --light: #FFFFFF;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e1e, #0a0a0a);
+            border-bottom: 4px solid var(--primary);
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: var(--primary);
+            text-shadow: 2px 2px 0px var(--accent);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hero-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .feature-item h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: black;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 3px solid var(--accent);
+            box-shadow: 0 5px 0 var(--accent);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 var(--accent);
+            background-color: #ffffb0;
+        }
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--accent);
+        }
+        .footer {
+            margin-top: auto;
+            padding: 2rem;
+            opacity: 0.5;
+            font-size: 0.8rem;
+        }
+        .note {
+            background-color: rgba(255, 0, 0, 0.2);
+            border: 1px solid red;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Chart Annotator</h1>
+        <div class="subtitle">Nanobanana Style Edition</div>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero-box">
+            <h2>プロ級のチャート注釈を、一瞬で。</h2>
+            <p>正確な価格位置への矢印配置。ポップで目を引くデザイン。<br>あなたのFX/株トレード分析を次のレベルへ。</p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <h3>🎨 Premium Design</h3>
+                    <p>視認性抜群のNanobanana風イエロー＆ポップスタイル。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎯 Pixel Perfect</h3>
+                    <p>価格を指定するだけで、1ピクセル単位で正確に矢印を配置。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🚀 Easy Start</h3>
+                    <p>インストール不要。バッチファイルを叩くだけで即起動。</p>
+                </div>
+            </div>
+
+            <a href="downloads/ChartTool_v1.zip" class="btn" download>
+                📥 ダウンロード (v1.0)
+            </a>
+
+            <div class="note">
+                <strong>⚠️ ご利用上の注意:</strong><br>
+                本ツールの実行には <strong>Python</strong> がPCにインストールされている必要があります。
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Antigravity Dev. All rights reserved.
+    </div>
+
+</body>
+</html>
