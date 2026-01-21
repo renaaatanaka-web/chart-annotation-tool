@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,10 @@
         :root {
             --bg-color: #0d0d0d;
             --text-color: #ffffff;
-            --accent-primary: #FFD600; /* Vivid Yellow */
-            --accent-secondary: #00E676; /* Vivid Green */
+            --accent-primary: #FFD600;
+            /* Vivid Yellow */
+            --accent-secondary: #00E676;
+            /* Vivid Green */
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
@@ -23,7 +26,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             overflow-x: hidden;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 50%, rgba(255, 214, 0, 0.08) 0%, transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(0, 230, 118, 0.08) 0%, transparent 25%);
         }
@@ -46,7 +49,10 @@
             font-size: 1.5rem;
             letter-spacing: -1px;
         }
-        .logo span { color: var(--accent-primary); }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
 
         /* Hero Section */
         header {
@@ -102,12 +108,18 @@
         .cta-button::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255,255,255,0.2);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
             transform: translateX(-100%);
             transition: 0.5s;
         }
-        .cta-button:hover::after { transform: translateX(100%); }
+
+        .cta-button:hover::after {
+            transform: translateX(100%);
+        }
 
         /* Features Grid */
         .features {
@@ -156,7 +168,7 @@
             transform: skewY(-3deg);
             margin: 5rem 0;
         }
-        
+
         .info-content {
             transform: skewY(3deg);
         }
@@ -170,9 +182,17 @@
 
         /* Animations */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         .floating-element {
@@ -183,11 +203,17 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            .features { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 3rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -195,17 +221,20 @@
     </nav>
 
     <header>
-        <div class="floating-element" style="top:20%; left:10%; width:300px; height:300px; background:rgba(255,214,0,0.1);"></div>
-        <div class="floating-element" style="bottom:20%; right:10%; width:400px; height:400px; background:rgba(0,230,118,0.1); animation-delay: -3s;"></div>
+        <div class="floating-element"
+            style="top:20%; left:10%; width:300px; height:300px; background:rgba(255,214,0,0.1);"></div>
+        <div class="floating-element"
+            style="bottom:20%; right:10%; width:400px; height:400px; background:rgba(0,230,118,0.1); animation-delay: -3s;">
+        </div>
 
         <h1>Make Your Charts <br>Speak Pop.</h1>
         <p class="subtitle">
             トレーディングビューのチャートを、一瞬でプロフェッショナルな解説画像へ。<br>
             Nanobananaスタイルのポップで正確な注釈を、Pythonの力で。
         </p>
-        
-        <a href="downloads/ChartTool_v1.zip" class="cta-button" download>
-            GET STARTED - v1.0
+
+        <a href="downloads/ChartTool_v2_AI.zip" class="cta-button" download>
+            GET STARTED - v2.0 (AI Edition)
         </a>
         <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6; color: var(--accent-primary);">
             📥 Windows専用 / インストール不要
@@ -239,4 +268,5 @@
     </footer>
 
 </body>
+
 </html>
