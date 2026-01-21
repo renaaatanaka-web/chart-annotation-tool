@@ -3,150 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanobanana Style Chart Tool - Download</title>
+    <title>Nanobanana Chart Tool | Professional Annotation</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@400;700&display=swap');
+
         :root {
-            --primary: #FDFD96; /* Pop Yellow */
-            --accent: #F57F17; /* Darker Yellow */
-            --dark: #121212;
-            --light: #FFFFFF;
+            --bg-color: #0d0d0d;
+            --text-color: #ffffff;
+            --accent-primary: #FFD600; /* Vivid Yellow */
+            --accent-secondary: #00E676; /* Vivid Green */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
             margin: 0;
             padding: 0;
+            font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(255, 214, 0, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 230, 118, 0.08) 0%, transparent 25%);
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--accent-primary); }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-        }
-        header {
-            width: 100%;
-            padding: 2rem 0;
             text-align: center;
-            background: linear-gradient(135deg, #1e1e1e, #0a0a0a);
-            border-bottom: 4px solid var(--primary);
+            padding: 0 1rem;
+            position: relative;
         }
+
         h1 {
-            font-size: 3rem;
-            margin: 0;
-            color: var(--primary);
-            text-shadow: 2px 2px 0px var(--accent);
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .subtitle {
+
+        p.subtitle {
             font-size: 1.2rem;
-            opacity: 0.8;
-            margin-top: 0.5rem;
+            max-width: 600px;
+            color: #ccc;
+            margin-bottom: 3rem;
+            line-height: 1.6;
         }
-        .container {
-            max-width: 800px;
-            width: 90%;
-            padding: 2rem;
-            text-align: center;
+
+        /* Call to Action */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: #000;
+            font-weight: 800;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 30px rgba(255, 214, 0, 0.3);
+            position: relative;
+            overflow: hidden;
         }
-        .hero-box {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 214, 0, 0.5);
         }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.2);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        .cta-button:hover::after { transform: translateX(100%); }
+
+        /* Features Grid */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            text-align: left;
-            margin-bottom: 2rem;
+            padding: 5rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .feature-item h3 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: black;
-            font-weight: bold;
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .card h3 {
             font-size: 1.5rem;
-            padding: 1rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 3px solid var(--accent);
-            box-shadow: 0 5px 0 var(--accent);
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 0 var(--accent);
-            background-color: #ffffb0;
+
+        .card p {
+            font-size: 1rem;
+            color: #aaa;
+            line-height: 1.6;
         }
-        .btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 var(--accent);
+
+        /* Stats/Info */
+        .info-bar {
+            background: var(--accent-primary);
+            color: #000;
+            padding: 3rem 0;
+            text-align: center;
+            transform: skewY(-3deg);
+            margin: 5rem 0;
         }
-        .footer {
-            margin-top: auto;
-            padding: 2rem;
-            opacity: 0.5;
-            font-size: 0.8rem;
+        
+        .info-content {
+            transform: skewY(3deg);
         }
-        .note {
-            background-color: rgba(255, 0, 0, 0.2);
-            border: 1px solid red;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 2rem;
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #555;
             font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">Nano<span>Banana</span> Tools</div>
+    </nav>
+
     <header>
-        <h1>Chart Annotator</h1>
-        <div class="subtitle">Nanobanana Style Edition</div>
+        <div class="floating-element" style="top:20%; left:10%; width:300px; height:300px; background:rgba(255,214,0,0.1);"></div>
+        <div class="floating-element" style="bottom:20%; right:10%; width:400px; height:400px; background:rgba(0,230,118,0.1); animation-delay: -3s;"></div>
+
+        <h1>Make Your Charts <br>Speak Pop.</h1>
+        <p class="subtitle">
+            トレーディングビューのチャートを、一瞬でプロフェッショナルな解説画像へ。<br>
+            Nanobananaスタイルのポップで正確な注釈を、Pythonの力で。
+        </p>
+        
+        <a href="downloads/ChartTool_v1.zip" class="cta-button" download>
+            GET STARTED - v1.0
+        </a>
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6; color: var(--accent-primary);">
+            📥 Windows専用 / インストール不要
+        </p>
     </header>
 
-    <div class="container">
-        
-        <div class="hero-box">
-            <h2>プロ級のチャート注釈を、一瞬で。</h2>
-            <p>正確な価格位置への矢印配置。ポップで目を引くデザイン。<br>あなたのFX/株トレード分析を次のレベルへ。</p>
-
-            <div class="features">
-                <div class="feature-item">
-                    <h3>🎨 Premium Design</h3>
-                    <p>視認性抜群のNanobanana風イエロー＆ポップスタイル。</p>
-                </div>
-                <div class="feature-item">
-                    <h3>🎯 Pixel Perfect</h3>
-                    <p>価格を指定するだけで、1ピクセル単位で正確に矢印を配置。</p>
-                </div>
-                <div class="feature-item">
-                    <h3>🚀 Easy Start</h3>
-                    <p>インストール不要。バッチファイルを叩くだけで即起動。</p>
-                </div>
-            </div>
-
-            <a href="downloads/ChartTool_v1.zip" class="btn" download>
-                📥 ダウンロード (v1.0)
-            </a>
-
-            <div class="note">
-                <strong>⚠️ ご利用上の注意:</strong><br>
-                本ツールの実行には <strong>Python</strong> がPCにインストールされている必要があります。
-            </div>
+    <div class="info-bar">
+        <div class="info-content">
+            <h2 style="font-size: 2.5rem; margin:0; font-weight:900;">PIXEL PERFECT ACCURACY</h2>
+            <p style="font-size: 1.2rem; margin-top:0.5rem; font-weight:700;">価格を指定するだけ。ズレない、迷わない。</p>
         </div>
-
     </div>
 
-    <div class="footer">
-        &copy; 2025 Antigravity Dev. All rights reserved.
-    </div>
+    <section class="features">
+        <div class="card">
+            <h3>🎨 Stylish Pop Design</h3>
+            <p>視認性を極めた「Nanobananaスタイル」を完全再現。黄色、緑、赤の鮮やかなカラーパレットで、重要なポイントが一目で伝わります。</p>
+        </div>
+        <div class="card">
+            <h3>⚡ Lightning Fast</h3>
+            <p>起動はバッチファイルを叩くだけ。重たい画像編集ソフトを立ち上げる必要はありません。ドラッグ＆ドロップで即編集開始。</p>
+        </div>
+        <div class="card">
+            <h3>🔒 Your Data is Yours</h3>
+            <p>すべてローカルPC上で完結します。大切なチャート分析データを外部サーバーに送信することはありません。（画像生成機能を除く）</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Antigravity Development. Designed for Traders.
+    </footer>
 
 </body>
 </html>
